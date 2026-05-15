@@ -1,0 +1,104 @@
+:root {
+  --paper: oklch(0.965 0.012 85);
+  --paper-2: oklch(0.93 0.018 80);
+  --pine: oklch(0.86 0.025 75);
+  --ink: oklch(0.22 0.018 50);
+  --ink-soft: oklch(0.38 0.02 50);
+  --ink-faint: oklch(0.55 0.02 50);
+  --moss: oklch(0.42 0.055 145);
+  --rule: oklch(0.78 0.018 70);
+  --serif: var(--font-serif), "EB Garamond", Georgia, serif;
+  --mono: var(--font-mono), ui-monospace, monospace;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+/* ============ utilities ============ */
+.wrap {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+
+.mono {
+  font-family: var(--mono);
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 11px;
+}
+
+.mono-sm {
+  font-family: var(--mono);
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  font-size: 10px;
+  text-transform: uppercase;
+}
+
+.rule {
+  height: 1px;
+  background: var(--rule);
+  border: 0;
+  width: 100%;
+}
+
+.v-rule {
+  width: 1px;
+  background: var(--rule);
+}
+
+.moss {
+  color: var(--moss);
+}
+
+.italic {
+  font-style: italic;
+}
+
+@media (max-width: 980px) {
+  .wrap {
+    padding: 0 24px;
+  }
+}

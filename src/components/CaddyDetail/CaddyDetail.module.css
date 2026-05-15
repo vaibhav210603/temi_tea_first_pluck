@@ -1,0 +1,121 @@
+.caddy {
+  padding: 140px 0 120px;
+}
+
+.caddyGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.imgCard {
+  position: relative;
+  aspect-ratio: 5 / 4;
+  background: var(--paper-2);
+  display: grid;
+  place-items: center;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.imgCard::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(80% 60% at 50% 90%, color-mix(in oklab, var(--ink) 16%, transparent), transparent 60%),
+    repeating-linear-gradient(0deg, transparent 0 30px, color-mix(in oklab, var(--ink) 4%, transparent) 30px 31px);
+}
+
+.imgCard img {
+  position: relative;
+  width: 78%;
+  filter: drop-shadow(0 22px 30px color-mix(in oklab, var(--ink) 18%, transparent));
+}
+
+.stamp {
+  position: absolute;
+  bottom: 18px;
+  left: 18px;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 1px solid var(--ink);
+  display: grid;
+  place-items: center;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 14px;
+  line-height: 1.1;
+  text-align: center;
+}
+
+.eyebrow {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--moss);
+}
+
+.h2 {
+  font-family: var(--serif);
+  font-size: clamp(48px, 5.4vw, 80px);
+  line-height: 1.02;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  margin-top: 14px;
+}
+
+.desc {
+  margin-top: 28px;
+  font-size: 19px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  max-width: 520px;
+}
+
+.specs {
+  margin-top: 48px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border-top: 1px solid var(--rule);
+}
+
+.spec {
+  padding: 20px 0;
+  border-bottom: 1px solid var(--rule);
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.spec:nth-child(odd) {
+  padding-right: 24px;
+  border-right: 1px solid var(--rule);
+}
+
+.spec:nth-child(even) {
+  padding-left: 24px;
+}
+
+.specK {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+.specV {
+  font-family: var(--serif);
+  font-size: 18px;
+}
+
+@media (max-width: 980px) {
+  .caddyGrid {
+    grid-template-columns: 1fr;
+  }
+}

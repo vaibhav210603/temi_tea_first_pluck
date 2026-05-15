@@ -1,0 +1,1205 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Premium Tea Wooden Caddy — Temi Tea Estate</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper: oklch(0.965 0.012 85);
+    --paper-2: oklch(0.93 0.018 80);
+    --pine: oklch(0.86 0.025 75);
+    --ink: oklch(0.22 0.018 50);
+    --ink-soft: oklch(0.38 0.02 50);
+    --ink-faint: oklch(0.55 0.02 50);
+    --moss: oklch(0.42 0.055 145);
+    --rule: oklch(0.78 0.018 70);
+    --serif: "Cormorant Garamond", "EB Garamond", Georgia, serif;
+    --mono: "JetBrains Mono", ui-monospace, monospace;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html,body{background:var(--paper); color:var(--ink); font-family:var(--serif); font-weight:400; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;}
+  body{overflow-x:hidden;}
+  ::selection{background:var(--ink); color:var(--paper);}
+  img{max-width:100%; display:block;}
+  a{color:inherit; text-decoration:none;}
+  button{font:inherit; color:inherit; background:none; border:0; cursor:pointer;}
+
+  /* ============ utilities ============ */
+  .wrap{max-width:1320px; margin:0 auto; padding:0 48px;}
+  .mono{font-family:var(--mono); font-weight:400; letter-spacing:0.08em; text-transform:uppercase; font-size:11px;}
+  .mono-sm{font-family:var(--mono); font-weight:400; letter-spacing:0.06em; font-size:10px; text-transform:uppercase;}
+  .rule{height:1px; background:var(--rule); border:0; width:100%;}
+  .v-rule{width:1px; background:var(--rule);}
+  .moss{color:var(--moss);}
+  .italic{font-style:italic;}
+
+  /* ============ NAV ============ */
+  nav.top{position:sticky; top:0; z-index:50; background:color-mix(in oklab, var(--paper) 88%, transparent); backdrop-filter:blur(8px); border-bottom:1px solid var(--rule);}
+  nav.top .row{display:flex; align-items:center; justify-content:space-between; height:64px;}
+  nav.top .brand{display:flex; align-items:center; gap:14px;}
+  nav.top .brand .crest{width:22px; height:22px; border:1px solid var(--ink); border-radius:50%; display:grid; place-items:center; font-family:var(--serif); font-style:italic; font-size:12px; line-height:1;}
+  nav.top .brand .name{font-family:var(--serif); font-weight:500; font-size:18px; letter-spacing:0.02em;}
+  nav.top ul{list-style:none; display:flex; gap:30px;}
+  nav.top ul a{font-family:var(--mono); font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--ink-soft);}
+  nav.top ul a:hover{color:var(--ink);}
+  nav.top .cart{display:flex; align-items:center; gap:18px;}
+  nav.top .cart .price{font-family:var(--serif); font-size:16px;}
+
+  /* ============ HERO (poster) ============ */
+  .hero{position:relative; min-height:calc(100vh - 64px); padding:36px 0 56px; overflow:hidden;}
+  .hero .topo{position:absolute; inset:0; pointer-events:none; opacity:.55; z-index:0;}
+  .hero .topo svg{width:100%; height:100%; display:block;}
+  .hero .leaf{position:absolute; pointer-events:none; opacity:.0; z-index:1; animation: drift 18s linear infinite;}
+  .hero .leaf:nth-child(2){animation-delay:-6s; left:12%; top:30%;}
+  .hero .leaf:nth-child(3){animation-delay:-12s; left:78%; top:22%;}
+  .hero .leaf:nth-child(4){animation-delay:-3s; left:64%; top:65%;}
+  @keyframes drift{
+    0%{transform:translate(0,0) rotate(0deg); opacity:0;}
+    15%{opacity:.35;}
+    50%{transform:translate(40px,-60px) rotate(140deg); opacity:.35;}
+    85%{opacity:.15;}
+    100%{transform:translate(80px,-160px) rotate(280deg); opacity:0;}
+  }
+
+  .hero .marks{position:relative; z-index:2; display:flex; justify-content:space-between; align-items:center; padding:0 0 24px; gap:24px; flex-wrap:wrap;}
+  .hero .marks .group{display:flex; gap:24px; align-items:center; flex-wrap:wrap;}
+  .hero .marks .mono{color:var(--ink-faint);}
+  .hero .marks .live{display:inline-flex; align-items:center; gap:8px;}
+  .hero .marks .live::before{content:""; width:6px; height:6px; border-radius:50%; background:var(--moss); animation:pulse 2.2s ease-in-out infinite;}
+  @keyframes pulse{0%,100%{opacity:.4; transform:scale(.9);}50%{opacity:1; transform:scale(1.2);}}
+
+  .hero-stage{position:relative; z-index:2; display:grid; grid-template-columns: 1fr; place-items:center; padding:24px 0 0;}
+
+  .hero-title{position:relative; text-align:center; padding:0 0 0; pointer-events:none;}
+  .hero-title .eyebrow{font-family:var(--mono); font-size:11px; letter-spacing:0.22em; text-transform:uppercase; color:var(--ink-faint); display:inline-flex; align-items:center; gap:14px; margin-bottom:24px;}
+  .hero-title .eyebrow::before, .hero-title .eyebrow::after{content:""; width:32px; height:1px; background:var(--ink-faint);}
+  .hero-title h1{font-family:var(--serif); font-weight:400; font-size:clamp(80px, 13vw, 220px); line-height:0.88; letter-spacing:-0.02em;}
+  .hero-title h1 .l{display:block; opacity:0; transform:translateY(30px); animation: rise .9s cubic-bezier(.2,.7,.2,1) forwards;}
+  .hero-title h1 .l:nth-child(1){animation-delay:.05s;}
+  .hero-title h1 .l:nth-child(2){animation-delay:.18s;}
+  .hero-title h1 .l:nth-child(3){animation-delay:.31s;}
+  .hero-title h1 em{font-style:italic; font-weight:300;}
+  .hero-title h1 .accent{font-style:italic; font-weight:300; color:var(--moss);}
+  @keyframes rise{to{opacity:1; transform:translateY(0);}}
+
+  /* product stage */
+  .product-stage{position:relative; width:min(620px, 92%); aspect-ratio: 1.1 / 1; margin-top:-60px; perspective: 1400px; z-index:2;}
+  .product-stage .floor{position:absolute; left:50%; bottom:8%; width:78%; height:26px; transform:translateX(-50%); background: radial-gradient(50% 100% at 50% 50%, color-mix(in oklab, var(--ink) 30%, transparent), transparent 70%); filter:blur(6px); border-radius:50%;}
+  .product-stage .steam{position:absolute; left:50%; top:6%; transform:translateX(-50%); width:160px; height:280px; pointer-events:none; opacity:.55;}
+  .product-stage .steam path{fill:none; stroke:color-mix(in oklab, var(--ink) 25%, transparent); stroke-width:1.4; stroke-linecap:round; stroke-dasharray:6 10; animation: steam 6s linear infinite;}
+  .product-stage .steam path:nth-child(2){animation-delay:-1.5s;}
+  .product-stage .steam path:nth-child(3){animation-delay:-3s;}
+  @keyframes steam{from{stroke-dashoffset:0;} to{stroke-dashoffset:-160;}}
+
+  .product-stage .caddy{position:absolute; inset:0; display:grid; place-items:center; transition: transform .35s cubic-bezier(.2,.7,.2,1); transform-style: preserve-3d; will-change: transform;}
+  .product-stage .caddy img{width:100%; height:auto; filter: drop-shadow(0 50px 60px color-mix(in oklab, var(--ink) 28%, transparent)) drop-shadow(0 12px 20px color-mix(in oklab, var(--ink) 18%, transparent)); animation: floaty 7s ease-in-out infinite; pointer-events:none;}
+  @keyframes floaty{0%,100%{transform:translateY(0);} 50%{transform:translateY(-10px);}}
+
+  /* hotspots */
+  .hotspot{position:absolute; width:32px; height:32px; border-radius:50%; border:1px solid color-mix(in oklab, var(--ink) 50%, transparent); display:grid; place-items:center; cursor:pointer; transform:translate(-50%,-50%); transition: background .25s, border-color .25s, transform .25s; z-index:3;}
+  .hotspot::after{content:""; width:8px; height:8px; background:var(--ink); border-radius:50%; transition:background .25s, transform .25s;}
+  .hotspot::before{content:""; position:absolute; inset:-6px; border-radius:50%; border:1px solid color-mix(in oklab, var(--moss) 70%, transparent); animation: ringExpand 2.8s ease-out infinite; opacity:0;}
+  @keyframes ringExpand{0%{transform:scale(.6); opacity:.7;} 100%{transform:scale(1.6); opacity:0;}}
+  .hotspot:hover, .hotspot.open{background:var(--ink); border-color:var(--ink); transform:translate(-50%,-50%) scale(1.05);}
+  .hotspot:hover::after, .hotspot.open::after{background:var(--paper);}
+
+  .tooltip{position:absolute; min-width:200px; max-width:240px; padding:14px 16px; background:var(--paper); border:1px solid var(--ink); border-radius:6px; box-shadow:0 14px 30px color-mix(in oklab, var(--ink) 18%, transparent); transform:translate(-50%, calc(-100% - 18px)); opacity:0; pointer-events:none; transition: opacity .25s, transform .25s; z-index:4;}
+  .tooltip.show{opacity:1; transform:translate(-50%, calc(-100% - 8px));}
+  .tooltip::after{content:""; position:absolute; left:50%; bottom:-7px; transform:translateX(-50%) rotate(45deg); width:12px; height:12px; background:var(--paper); border-right:1px solid var(--ink); border-bottom:1px solid var(--ink);}
+  .tooltip .k{font-family:var(--mono); font-size:9px; letter-spacing:0.16em; text-transform:uppercase; color:var(--moss);}
+  .tooltip .v{font-family:var(--serif); font-size:18px; line-height:1.25; margin-top:6px;}
+  .tooltip .v em{font-style:italic; font-weight:400;}
+  .tooltip .sub{font-family:var(--mono); font-size:10px; letter-spacing:0.08em; text-transform:uppercase; color:var(--ink-faint); margin-top:8px;}
+
+  /* hero bottom: telemetry + CTA */
+  .hero-foot{position:relative; z-index:2; margin-top:24px; display:grid; grid-template-columns: 1fr auto 1fr; gap:32px; align-items:center; padding-top:28px; border-top:1px solid var(--rule);}
+  .hero-foot .tele{display:flex; gap:36px; flex-wrap:wrap;}
+  .hero-foot .tele .cell .k{font-family:var(--mono); font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-faint);}
+  .hero-foot .tele .cell .v{font-family:var(--serif); font-size:22px; line-height:1.1; margin-top:4px;}
+  .hero-foot .tele .cell .v em{font-style:italic; font-weight:300;}
+  .hero-foot .tele .cell .v small{font-size:13px; color:var(--ink-faint);}
+  .hero-foot .cta-row{display:flex; gap:12px; align-items:center; justify-content:center;}
+  .hero-foot .right-tele{justify-content:flex-end;}
+
+  .btn-primary{display:inline-flex; align-items:center; gap:14px; padding:18px 26px; background:var(--ink); color:var(--paper); border-radius:999px; font-family:var(--mono); font-size:11px; letter-spacing:0.16em; text-transform:uppercase; transition:transform .2s, background .2s; border:1px solid var(--ink);}
+  .btn-primary:hover{transform:translateY(-1px); background:#000;}
+  .btn-primary .arr{display:inline-block; width:18px; height:1px; background:var(--paper); position:relative;}
+  .btn-primary .arr::after{content:""; position:absolute; right:0; top:-3px; width:7px; height:7px; border-top:1px solid var(--paper); border-right:1px solid var(--paper); transform:rotate(45deg);}
+  .btn-ghost{display:inline-flex; align-items:center; gap:8px; padding:18px 22px; font-family:var(--mono); font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:var(--ink-soft); border:1px solid var(--rule); border-radius:999px; background:color-mix(in oklab, var(--paper) 85%, transparent);}
+  .btn-ghost:hover{color:var(--ink); border-color:var(--ink);}
+
+  @media (max-width: 980px){
+    .hero-foot{grid-template-columns:1fr; text-align:center;}
+    .hero-foot .tele{justify-content:center;}
+    .hero-foot .right-tele{justify-content:center;}
+  }
+
+  /* ============ MARQUEE ============ */
+  .marquee{border-block:1px solid var(--rule); padding:18px 0; overflow:hidden; background:color-mix(in oklab, var(--paper) 70%, var(--pine) 30%);}
+  .marquee-track{display:flex; gap:64px; white-space:nowrap; animation: scroll 60s linear infinite;}
+  .marquee-track span{font-family:var(--serif); font-size:22px; color:var(--ink); display:inline-flex; align-items:center; gap:64px;}
+  .marquee-track span::after{content:"✦"; color:var(--moss); font-size:14px;}
+  @keyframes scroll { from{ transform:translateX(0);} to{ transform:translateX(-50%);} }
+
+  /* ============ ORIGIN ============ */
+  .origin{padding:140px 0 120px; position:relative;}
+  .origin .head{display:grid; grid-template-columns:1fr 2fr; gap:60px; padding-bottom:80px;}
+  .origin .eyebrow{font-family:var(--mono); font-size:11px; letter-spacing:0.18em; text-transform:uppercase; color:var(--moss);}
+  .origin .head h2{font-family:var(--serif); font-size:clamp(48px,5.4vw,84px); line-height:1.02; font-weight:400; letter-spacing:-0.01em;}
+  .origin .head h2 em{font-style:italic; font-weight:300;}
+  .origin-grid{display:grid; grid-template-columns: 1.1fr 1fr; gap:80px;}
+  .origin .copy p{font-size:20px; line-height:1.65; color:var(--ink-soft); margin-bottom:22px; max-width:560px;}
+  .origin .copy p .accent{color:var(--ink); font-style:italic;}
+  .origin .copy .sign{margin-top:32px; display:flex; gap:16px; align-items:center;}
+  .origin .copy .sign .squiggle{font-family:var(--serif); font-style:italic; font-size:30px; color:var(--ink);}
+  .origin .copy .sign .who{font-family:var(--mono); font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--ink-faint);}
+
+  .origin .facts{border:1px solid var(--rule); padding:6px;}
+  .origin .facts .grid{display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--rule);}
+  .origin .facts .cell{background:var(--paper); padding:28px 24px;}
+  .origin .facts .cell .k{font-family:var(--mono); font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-faint);}
+  .origin .facts .cell .v{font-family:var(--serif); font-size:54px; line-height:1; margin-top:14px; font-weight:400;}
+  .origin .facts .cell .v small{font-size:18px; color:var(--ink-faint); margin-left:4px;}
+  .origin .facts .cell .note{margin-top:10px; font-size:14px; color:var(--ink-faint); line-height:1.4;}
+
+  .map-strip{margin-top:60px; height:240px; background:
+    linear-gradient(180deg, color-mix(in oklab, var(--pine) 50%, var(--paper)) 0%, var(--pine) 50%, color-mix(in oklab, var(--moss) 30%, var(--pine)) 100%);
+    position:relative; overflow:hidden; border-radius:2px;
+  }
+  .map-strip::before{content:""; position:absolute; inset:0;
+    background:
+      repeating-linear-gradient(90deg, transparent 0 80px, color-mix(in oklab, var(--ink) 8%, transparent) 80px 81px),
+      radial-gradient(60% 80% at 30% 100%, color-mix(in oklab, var(--ink) 15%, transparent), transparent 70%),
+      radial-gradient(70% 90% at 75% 100%, color-mix(in oklab, var(--ink) 25%, transparent), transparent 70%);
+  }
+  .map-strip .pin{position:absolute; left:48%; top:50%; transform:translate(-50%,-50%); text-align:center;}
+  .map-strip .pin .dot{width:12px; height:12px; background:var(--paper); border:2px solid var(--ink); border-radius:50%; margin:0 auto; box-shadow:0 0 0 6px color-mix(in oklab, var(--paper) 40%, transparent);}
+  .map-strip .pin .ring{position:absolute; left:50%; top:6px; transform:translate(-50%,-50%); width:36px; height:36px; border:1px solid var(--ink); border-radius:50%; animation: ping 3s ease-out infinite; opacity:.6;}
+  @keyframes ping { 0%{ transform:translate(-50%,-50%) scale(.4); opacity:.8;} 100%{transform:translate(-50%,-50%) scale(2); opacity:0;} }
+  .map-strip .pin .lbl{margin-top:14px; font-family:var(--mono); font-size:10px; letter-spacing:0.16em; text-transform:uppercase; color:var(--paper);}
+  .map-strip .coords{position:absolute; left:48px; bottom:24px; font-family:var(--mono); font-size:10px; letter-spacing:0.1em; color:color-mix(in oklab, var(--paper) 80%, transparent);}
+  .map-strip .alt{position:absolute; right:48px; bottom:24px; font-family:var(--mono); font-size:10px; letter-spacing:0.1em; color:color-mix(in oklab, var(--paper) 80%, transparent); text-align:right;}
+
+  /* ============ TASTING ============ */
+  .tasting{padding:140px 0 120px; background:linear-gradient(180deg, var(--paper) 0%, color-mix(in oklab, var(--paper) 80%, var(--pine) 20%) 100%);}
+  .tasting .head{display:flex; justify-content:space-between; align-items:flex-end; padding-bottom:80px; gap:60px;}
+  .tasting .head h2{font-family:var(--serif); font-size:clamp(48px,5.4vw,84px); line-height:1; font-weight:400; max-width:760px; letter-spacing:-0.01em;}
+  .tasting .head h2 em{font-style:italic; font-weight:300;}
+  .tasting .head p{font-size:18px; line-height:1.55; color:var(--ink-soft); max-width:320px;}
+  .tasting-grid{display:grid; grid-template-columns: 1.1fr 1fr; gap:80px; align-items:center;}
+
+  /* Wheel */
+  .wheel-wrap{position:relative; aspect-ratio:1; max-width:520px; margin:0 auto;}
+  .wheel{position:absolute; inset:0;}
+  .wheel circle, .wheel path{transition:opacity .35s, stroke-width .25s, fill-opacity .35s;}
+  .wheel .arc{fill:var(--pine); fill-opacity:.55; stroke:var(--ink); stroke-width:1; cursor:pointer;}
+  .wheel .arc.active{fill:var(--moss); fill-opacity:.9;}
+  .wheel .arc:not(.active):hover{fill-opacity:.85;}
+  .wheel .ring{fill:none; stroke:var(--ink); stroke-width:1;}
+  .wheel-label{font-family:var(--mono); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; fill:var(--ink);}
+  .wheel-center{position:absolute; inset:30%; border-radius:50%; background:var(--paper); border:1px solid var(--rule); display:grid; place-items:center; text-align:center;}
+  .wheel-center .word{font-family:var(--serif); font-style:italic; font-size:36px; line-height:1; color:var(--ink);}
+  .wheel-center .sub{font-family:var(--mono); font-size:9px; letter-spacing:0.16em; text-transform:uppercase; color:var(--ink-faint); margin-top:8px;}
+
+  .tasting-notes .item{padding:24px 0; border-bottom:1px solid var(--rule); display:grid; grid-template-columns:80px 1fr; gap:24px; align-items:baseline; cursor:default;}
+  .tasting-notes .item:first-child{border-top:1px solid var(--rule);}
+  .tasting-notes .item .n{font-family:var(--mono); font-size:11px; letter-spacing:0.1em; color:var(--ink-faint);}
+  .tasting-notes .item .lbl{font-family:var(--serif); font-size:30px; font-weight:400;}
+  .tasting-notes .item .lbl em{font-style:italic;}
+  .tasting-notes .item .desc{font-size:16px; line-height:1.5; color:var(--ink-soft); margin-top:6px;}
+  .tasting-notes .item.active .lbl, .tasting-notes .item:hover .lbl{color:var(--moss);}
+
+  /* Brew color slider */
+  .brew-bar{margin-top:48px;}
+  .brew-bar .lbls{display:flex; justify-content:space-between; font-family:var(--mono); font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--ink-faint); margin-bottom:12px;}
+  .brew-bar .bar{height:24px; border-radius:999px; background:linear-gradient(90deg, oklch(0.85 0.06 80), oklch(0.62 0.10 60), oklch(0.42 0.09 45), oklch(0.28 0.06 40));}
+
+  /* ============ CADDY DETAIL ============ */
+  .caddy{padding:140px 0 120px;}
+  .caddy-grid{display:grid; grid-template-columns: 1fr 1fr; gap:80px; align-items:center;}
+  .caddy .img-card{position:relative; aspect-ratio:5/4; background:var(--paper-2); display:grid; place-items:center; border-radius:2px; overflow:hidden;}
+  .caddy .img-card::before{content:""; position:absolute; inset:0;
+    background:
+      radial-gradient(80% 60% at 50% 90%, color-mix(in oklab, var(--ink) 16%, transparent), transparent 60%),
+      repeating-linear-gradient(0deg, transparent 0 30px, color-mix(in oklab, var(--ink) 4%, transparent) 30px 31px);
+  }
+  .caddy .img-card img{position:relative; width:78%; filter:drop-shadow(0 22px 30px color-mix(in oklab, var(--ink) 18%, transparent));}
+  .caddy .img-card .stamp{position:absolute; bottom:18px; left:18px; width:64px; height:64px; border-radius:50%; border:1px solid var(--ink); display:grid; place-items:center; font-family:var(--serif); font-style:italic; font-size:14px; line-height:1.1; text-align:center;}
+  .caddy h2{font-family:var(--serif); font-size:clamp(48px,5.4vw,80px); line-height:1.02; font-weight:400; letter-spacing:-0.01em;}
+  .caddy h2 em{font-style:italic; font-weight:300;}
+  .caddy .desc{margin-top:28px; font-size:19px; line-height:1.6; color:var(--ink-soft); max-width:520px;}
+  .caddy .specs{margin-top:48px; display:grid; grid-template-columns:1fr 1fr; gap:0; border-top:1px solid var(--rule);}
+  .caddy .specs .spec{padding:20px 0; border-bottom:1px solid var(--rule); display:flex; justify-content:space-between; gap:16px;}
+  .caddy .specs .spec:nth-child(odd){padding-right:24px; border-right:1px solid var(--rule);}
+  .caddy .specs .spec:nth-child(even){padding-left:24px;}
+  .caddy .specs .spec .k{font-family:var(--mono); font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-faint);}
+  .caddy .specs .spec .v{font-family:var(--serif); font-size:18px;}
+
+  /* ============ RITUAL (brew timer) ============ */
+  .ritual{padding:140px 0; background:var(--ink); color:var(--paper); position:relative;}
+  .ritual .eyebrow{font-family:var(--mono); font-size:11px; letter-spacing:0.18em; text-transform:uppercase; color:color-mix(in oklab, var(--paper) 60%, transparent);}
+  .ritual h2{font-family:var(--serif); font-size:clamp(48px,5.4vw,84px); line-height:1; font-weight:400; letter-spacing:-0.01em; margin-top:14px;}
+  .ritual h2 em{font-style:italic; font-weight:300; color:color-mix(in oklab, var(--paper) 80%, var(--moss));}
+  .ritual-head{display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:end; padding-bottom:64px;}
+  .ritual-head p{font-size:18px; line-height:1.6; color:color-mix(in oklab, var(--paper) 70%, transparent); max-width:420px;}
+
+  .timer{display:grid; grid-template-columns:1.1fr 1fr; gap:80px; align-items:center; border-top:1px solid color-mix(in oklab, var(--paper) 18%, transparent); padding-top:64px;}
+  .steps{display:grid; gap:0;}
+  .step{display:grid; grid-template-columns:60px 1fr 90px; gap:24px; align-items:baseline; padding:24px 0; border-bottom:1px solid color-mix(in oklab, var(--paper) 14%, transparent); cursor:pointer; transition:opacity .25s;}
+  .step:not(.active){opacity:.4;}
+  .step .n{font-family:var(--mono); font-size:12px; letter-spacing:0.12em; color:color-mix(in oklab, var(--paper) 60%, transparent);}
+  .step .ttl{font-family:var(--serif); font-size:28px; font-weight:400;}
+  .step .ttl em{font-style:italic;}
+  .step .ttl .d{display:block; font-family:var(--mono); font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:color-mix(in oklab, var(--paper) 60%, transparent); margin-top:6px; font-style:normal;}
+  .step .dur{font-family:var(--mono); font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:color-mix(in oklab, var(--paper) 80%, transparent); text-align:right;}
+
+  .timer-card{position:relative; aspect-ratio:1; max-width:440px; margin:0 auto; display:grid; place-items:center; border:1px solid color-mix(in oklab, var(--paper) 18%, transparent); border-radius:50%;}
+  .timer-card .arc-bg, .timer-card .arc-fg{position:absolute; inset:8px; transform:rotate(-90deg);}
+  .timer-card .arc-fg circle{transition:stroke-dashoffset .9s linear;}
+  .timer-card .center{position:relative; text-align:center; z-index:2;}
+  .timer-card .center .t{font-family:var(--serif); font-size:96px; line-height:1; font-weight:300; letter-spacing:-0.02em;}
+  .timer-card .center .label{font-family:var(--mono); font-size:10px; letter-spacing:0.18em; text-transform:uppercase; color:color-mix(in oklab, var(--paper) 60%, transparent); margin-top:10px;}
+  .timer-card .ctrl{margin-top:18px; display:inline-flex; gap:10px;}
+  .timer-card .ctrl button{padding:10px 18px; border:1px solid color-mix(in oklab, var(--paper) 22%, transparent); border-radius:999px; font-family:var(--mono); font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:var(--paper);}
+  .timer-card .ctrl button:hover{background:color-mix(in oklab, var(--paper) 10%, transparent);}
+  .timer-card .ctrl button.primary{background:var(--paper); color:var(--ink); border-color:var(--paper);}
+
+  /* ============ HERITAGE ============ */
+  .heritage{padding:140px 0 120px;}
+  .heritage h2{font-family:var(--serif); font-size:clamp(48px,5.4vw,84px); line-height:1.02; font-weight:400; max-width:920px; letter-spacing:-0.01em;}
+  .heritage h2 em{font-style:italic; font-weight:300;}
+  .timeline{margin-top:80px; display:grid; grid-template-columns:repeat(4, 1fr); gap:0; border-top:1px solid var(--rule); border-bottom:1px solid var(--rule);}
+  .timeline .step{display:block; padding:32px 28px 32px 0; border-right:1px solid var(--rule); position:relative;}
+  .timeline .step:last-child{border-right:0;}
+  .timeline .step::before{content:""; position:absolute; top:-5px; left:0; width:9px; height:9px; background:var(--ink); border-radius:50%;}
+  .timeline .step .yr{font-family:var(--mono); font-size:11px; letter-spacing:0.14em; color:var(--moss);}
+  .timeline .step .ttl{margin-top:14px; font-family:var(--serif); font-size:24px; line-height:1.15; font-weight:500;}
+  .timeline .step .desc{margin-top:14px; font-size:15px; line-height:1.5; color:var(--ink-soft);}
+
+  .quotes{margin-top:80px; display:grid; grid-template-columns:1fr 1fr 1fr; gap:24px;}
+  .award{padding:36px 32px; border:1px solid var(--rule); background:var(--paper); display:flex; flex-direction:column; gap:18px; color:var(--ink); position:relative;}
+  .award .badge-wrap{color:var(--moss); width:80px; height:80px; margin-bottom:6px;}
+  .award .badge-mark{width:100%; height:100%;}
+  .award .award-meta{font-family:var(--mono); font-size:10px; letter-spacing:0.18em; text-transform:uppercase; color:var(--moss);}
+  .award h3{font-family:var(--serif); font-weight:400; font-size:24px; line-height:1.25; letter-spacing:-0.005em;}
+  .award h3 em{font-style:italic; font-weight:400;}
+  .award .award-body{font-size:15px; line-height:1.55; color:var(--ink-soft); border-top:1px solid var(--rule); padding-top:18px; margin-top:auto;}
+  .award .award-src{font-family:var(--mono); font-size:9px; letter-spacing:0.16em; text-transform:uppercase; color:var(--ink-faint);}
+
+  /* ============ CTA ============ */
+  /* ============ CTA (split-tone closing ticket) ============ */
+  .cta{padding:140px 0 100px; background:var(--paper); position:relative; overflow:hidden;}
+  .cta .topo{position:absolute; inset:0; pointer-events:none; opacity:.45; z-index:0;}
+  .cta .topo svg{width:100%; height:100%; display:block;}
+
+  .cta .inner{position:relative; z-index:1; text-align:center;}
+  .cta .eyebrow{font-family:var(--mono); font-size:11px; letter-spacing:0.22em; text-transform:uppercase; color:var(--moss); display:inline-flex; align-items:center; gap:14px;}
+  .cta .eyebrow::before, .cta .eyebrow::after{content:""; width:32px; height:1px; background:var(--moss);}
+  .cta h2{font-family:var(--serif); font-size:clamp(64px,8vw,128px); line-height:0.95; font-weight:400; letter-spacing:-0.02em; margin-top:24px; max-width:1100px; margin-inline:auto;}
+  .cta h2 em{font-style:italic; font-weight:300; color:var(--moss);}
+  .cta .sub{margin-top:28px; font-size:19px; line-height:1.55; color:var(--ink-soft); max-width:540px; margin-inline:auto;}
+
+  /* ticket */
+  .ticket{margin:72px auto 0; max-width:1080px; display:grid; grid-template-columns: 1.05fr 1fr; background:var(--paper); border:1px solid var(--ink); border-radius:6px; overflow:hidden; box-shadow:0 40px 80px color-mix(in oklab, var(--ink) 18%, transparent), 0 12px 24px color-mix(in oklab, var(--ink) 10%, transparent); text-align:left; position:relative;}
+
+  /* perforation line between halves */
+  .ticket::before{content:""; position:absolute; top:24px; bottom:24px; left:calc(52.5% - 0.5px); width:1px; background-image: linear-gradient(to bottom, var(--ink) 0 6px, transparent 6px 12px); background-size: 1px 12px;}
+  .ticket::after{content:""; position:absolute; left:calc(52.5% - 12px); top:-12px; width:24px; height:24px; border-radius:50%; background:var(--paper); border:1px solid var(--ink);}
+
+  /* ticket — product side */
+  .ticket .product{position:relative; padding:48px 48px 40px; background: linear-gradient(180deg, var(--paper) 0%, color-mix(in oklab, var(--paper-2) 75%, var(--paper)) 100%); display:grid; grid-template-rows:auto 1fr auto; gap:18px;}
+  .ticket .stub-head{display:flex; justify-content:space-between; align-items:flex-start; gap:24px;}
+  .ticket .stub-head .lot{font-family:var(--mono); font-size:10px; letter-spacing:0.16em; text-transform:uppercase; color:var(--ink-faint);}
+  .ticket .stub-head .lot strong{display:block; color:var(--ink); font-weight:500; margin-top:4px; font-size:11px;}
+  .ticket .stub-head .stamp{width:64px; height:64px; border:1.5px solid var(--ink); border-radius:50%; display:grid; place-items:center; transform:rotate(-8deg); font-family:var(--serif); font-style:italic; font-size:13px; line-height:1.1; text-align:center; color:var(--ink); opacity:.75;}
+
+  .ticket .product-img{position:relative; display:grid; place-items:center; min-height:280px; padding:8px 0;}
+  .ticket .product-img img{max-width:100%; max-height:280px; filter: drop-shadow(0 24px 30px color-mix(in oklab, var(--ink) 20%, transparent));}
+  .ticket .product-img .floor{position:absolute; left:50%; bottom:8%; width:60%; height:20px; transform:translateX(-50%); background: radial-gradient(50% 100% at 50% 50%, color-mix(in oklab, var(--ink) 25%, transparent), transparent 70%); filter:blur(6px); border-radius:50%;}
+
+  .ticket .product-foot{display:grid; grid-template-columns:1fr 1fr; gap:14px; padding-top:18px; border-top:1px solid var(--rule);}
+  .ticket .product-foot .cell .k{font-family:var(--mono); font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-faint);}
+  .ticket .product-foot .cell .v{font-family:var(--serif); font-size:18px; line-height:1.2; margin-top:4px;}
+  .ticket .product-foot .cell .v em{font-style:italic; font-weight:400;}
+
+  /* ticket — order side */
+  .ticket .order{padding:48px 48px 40px; background: var(--ink); color:var(--paper); display:grid; grid-template-rows:auto auto 1fr auto auto; gap:18px;}
+  .ticket .order .o-head{display:flex; justify-content:space-between; align-items:flex-start; gap:16px;}
+  .ticket .order .o-head .label{font-family:var(--mono); font-size:10px; letter-spacing:0.18em; text-transform:uppercase; color:color-mix(in oklab, var(--paper) 60%, transparent);}
+  .ticket .order .o-head .num{font-family:var(--mono); font-size:10px; letter-spacing:0.12em; color:color-mix(in oklab, var(--paper) 60%, transparent);}
+
+  .ticket .order h3{font-family:var(--serif); font-weight:400; font-size:36px; line-height:1.1; letter-spacing:-0.01em;}
+  .ticket .order h3 em{font-style:italic; font-weight:300;}
+
+  .ticket .order .ord-grid{display:grid; grid-template-columns:1fr 1fr; gap:18px 24px; padding:24px 0; border-top:1px solid color-mix(in oklab, var(--paper) 18%, transparent); border-bottom:1px solid color-mix(in oklab, var(--paper) 18%, transparent);}
+  .ticket .order .ord-grid .cell .k{font-family:var(--mono); font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:color-mix(in oklab, var(--paper) 55%, transparent);}
+  .ticket .order .ord-grid .cell .v{font-family:var(--serif); font-size:20px; line-height:1.15; margin-top:6px;}
+  .ticket .order .ord-grid .cell .v em{font-style:italic; font-weight:300;}
+
+  .ticket .order .qty-row{display:flex; justify-content:space-between; align-items:center; gap:18px;}
+  .ticket .order .qty-row .qk{font-family:var(--mono); font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:color-mix(in oklab, var(--paper) 55%, transparent);}
+  .ticket .order .qty{display:inline-flex; align-items:center; border:1px solid color-mix(in oklab, var(--paper) 30%, transparent); border-radius:999px; overflow:hidden; background:transparent;}
+  .ticket .order .qty button{padding:10px 16px; font-family:var(--mono); font-size:14px; color:var(--paper);}
+  .ticket .order .qty button:hover{background:color-mix(in oklab, var(--paper) 10%, transparent);}
+  .ticket .order .qty .n{padding:0 8px; font-family:var(--serif); font-size:20px; min-width:32px; text-align:center;}
+
+  .ticket .order .total{display:flex; justify-content:space-between; align-items:baseline; gap:18px;}
+  .ticket .order .total .tk{font-family:var(--mono); font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:color-mix(in oklab, var(--paper) 55%, transparent);}
+  .ticket .order .total .tv{font-family:var(--serif); font-weight:300; font-size:54px; line-height:1; letter-spacing:-0.01em;}
+  .ticket .order .total .tv small{font-size:18px; color:color-mix(in oklab, var(--paper) 55%, transparent); margin-left:6px;}
+
+  .ticket .order .add{display:flex; align-items:center; justify-content:space-between; gap:14px; width:100%; padding:20px 26px; background:var(--paper); color:var(--ink); border-radius:999px; font-family:var(--mono); font-size:12px; letter-spacing:0.16em; text-transform:uppercase; font-weight:500; transition: transform .2s, background .2s; cursor:pointer; border:0;}
+  .ticket .order .add:hover{transform:translateY(-1px); background:#fff;}
+  .ticket .order .add .arr{display:inline-block; width:22px; height:1px; background:var(--ink); position:relative;}
+  .ticket .order .add .arr::after{content:""; position:absolute; right:-1px; top:-4px; width:9px; height:9px; border-top:1.5px solid var(--ink); border-right:1.5px solid var(--ink); transform:rotate(45deg);}
+
+  /* reassurance + contact band */
+  .cta .band{margin-top:48px; max-width:1080px; margin-inline:auto; display:flex; align-items:center; justify-content:space-between; gap:24px; padding:24px 32px; border:1px solid var(--rule); background:var(--paper);}
+  .cta .band .group{display:flex; gap:36px; flex-wrap:wrap;}
+  .cta .band .item .k{font-family:var(--mono); font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-faint);}
+  .cta .band .item .v{font-family:var(--serif); font-size:17px; margin-top:4px;}
+  .cta .band .item .v em{font-style:italic;}
+  .cta .band .pill{font-family:var(--mono); font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:var(--moss); display:inline-flex; align-items:center; gap:8px;}
+  .cta .band .pill::before{content:""; width:6px; height:6px; background:var(--moss); border-radius:50%;}
+
+  .reassure{margin-top:36px; display:flex; justify-content:center; gap:40px; flex-wrap:wrap; font-family:var(--mono); font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:var(--ink-soft);}
+  .reassure span{display:inline-flex; align-items:center; gap:8px;}
+  .reassure span::before{content:""; width:6px; height:6px; background:var(--moss); border-radius:50%;}
+
+  @media (max-width: 980px){
+    .ticket{grid-template-columns:1fr;}
+    .ticket::before, .ticket::after{display:none;}
+    .ticket .product, .ticket .order{padding:36px 28px;}
+    .cta .band{flex-direction:column; align-items:flex-start; padding:24px;}
+    .cta .band .group{flex-direction:column; gap:18px;}
+  }
+
+  /* ============ FOOTER ============ */
+  footer{background:var(--ink); color:color-mix(in oklab, var(--paper) 75%, transparent); padding:80px 0 40px;}
+  footer .grid{display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:60px;}
+  footer h3{font-family:var(--serif); font-size:32px; font-weight:400; color:var(--paper);}
+  footer h3 em{font-style:italic;}
+  footer .col h4{font-family:var(--mono); font-size:10px; letter-spacing:0.16em; text-transform:uppercase; color:color-mix(in oklab, var(--paper) 60%, transparent); margin-bottom:18px;}
+  footer .col ul{list-style:none; display:grid; gap:10px;}
+  footer .col ul a{font-family:var(--serif); font-size:18px; color:color-mix(in oklab, var(--paper) 85%, transparent);}
+  footer .col ul a:hover{color:var(--paper);}
+  footer .copy{margin-top:60px; padding-top:24px; border-top:1px solid color-mix(in oklab, var(--paper) 14%, transparent); display:flex; justify-content:space-between; align-items:center; font-family:var(--mono); font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:color-mix(in oklab, var(--paper) 50%, transparent);}
+
+  @media (max-width: 980px){
+    .wrap{padding:0 24px;}
+    .hero-grid, .origin-grid, .tasting-grid, .caddy-grid, .timer, .timeline, .quotes, footer .grid{grid-template-columns:1fr;}
+    .timeline .step{border-right:0; border-bottom:1px solid var(--rule);}
+    .origin .head{grid-template-columns:1fr;}
+    .ritual-head{grid-template-columns:1fr;}
+    .tasting .head{flex-direction:column; align-items:flex-start;}
+    .order-card{grid-template-columns:1fr; text-align:center;}
+    .order-card .right{align-items:center;}
+  }
+</style>
+</head>
+<body>
+
+<nav class="top">
+  <div class="wrap row">
+    <div class="brand">
+      <span class="crest">T</span>
+      <span class="name">Temi <em style="font-style:italic; font-weight:300;">Tea</em></span>
+    </div>
+    <ul>
+      <li><a href="#origin">Origin</a></li>
+      <li><a href="#tasting">Tasting Notes</a></li>
+      <li><a href="#caddy">The Caddy</a></li>
+      <li><a href="#ritual">Ritual</a></li>
+      <li><a href="#heritage">Recognition</a></li>
+    </ul>
+    <div class="cart">
+      <span class="mono">Cart · 01</span>
+      <span class="price">₹1,421</span>
+    </div>
+  </div>
+</nav>
+
+<!-- ============ HERO (interactive poster) ============ -->
+<section class="hero">
+  <!-- Topographic contour background (Tendong hill, abstracted) -->
+  <div class="topo" aria-hidden="true">
+    <svg viewBox="0 0 1400 900" preserveAspectRatio="xMidYMid slice">
+      <defs>
+        <pattern id="tg" width="80" height="80" patternUnits="userSpaceOnUse">
+          <path d="M0 40 L80 40" stroke="oklch(0.78 0.018 70)" stroke-width="0.4" stroke-dasharray="1 6"/>
+        </pattern>
+      </defs>
+      <rect width="1400" height="900" fill="url(#tg)" opacity=".5"/>
+      <g fill="none" stroke="oklch(0.78 0.018 70)" stroke-width="0.7">
+        <path d="M-50 460 C 180 380, 360 510, 580 440 S 940 320, 1180 410 S 1500 360, 1500 360"/>
+        <path d="M-50 520 C 200 460, 380 580, 600 510 S 960 380, 1180 470 S 1500 420, 1500 420"/>
+        <path d="M-50 580 C 220 540, 400 640, 620 580 S 980 460, 1180 540 S 1500 480, 1500 480"/>
+        <path d="M-50 640 C 240 610, 420 700, 640 640 S 1000 540, 1200 610 S 1500 540, 1500 540"/>
+        <path d="M-50 700 C 260 680, 440 760, 660 700 S 1020 620, 1220 680 S 1500 600, 1500 600"/>
+      </g>
+      <g fill="none" stroke="oklch(0.42 0.055 145)" stroke-width="0.6" opacity=".5">
+        <path d="M-50 400 C 200 300, 400 460, 620 380 S 980 240, 1200 350 S 1500 290, 1500 290"/>
+      </g>
+      <!-- coordinate cross-hairs -->
+      <g stroke="oklch(0.22 0.018 50)" stroke-width="0.5" opacity=".25">
+        <line x1="120" y1="0" x2="120" y2="900"/>
+        <line x1="1280" y1="0" x2="1280" y2="900"/>
+        <line x1="0" y1="120" x2="1400" y2="120"/>
+        <line x1="0" y1="780" x2="1400" y2="780"/>
+      </g>
+    </svg>
+  </div>
+
+  <!-- Drifting tea leaves -->
+  <svg class="leaf" width="22" height="22" viewBox="0 0 22 22"><path d="M2 11 C 6 3, 16 3, 20 11 C 16 19, 6 19, 2 11 Z M2 11 L 20 11" fill="oklch(0.42 0.055 145)" opacity=".55" stroke="oklch(0.22 0.018 50)" stroke-width=".4"/></svg>
+  <svg class="leaf" width="18" height="18" viewBox="0 0 22 22"><path d="M2 11 C 6 3, 16 3, 20 11 C 16 19, 6 19, 2 11 Z M2 11 L 20 11" fill="oklch(0.42 0.055 145)" opacity=".4" stroke="oklch(0.22 0.018 50)" stroke-width=".4"/></svg>
+  <svg class="leaf" width="14" height="14" viewBox="0 0 22 22"><path d="M2 11 C 6 3, 16 3, 20 11 C 16 19, 6 19, 2 11 Z M2 11 L 20 11" fill="oklch(0.42 0.055 145)" opacity=".5" stroke="oklch(0.22 0.018 50)" stroke-width=".4"/></svg>
+
+  <div class="wrap">
+
+    <div class="marks">
+      <div class="group">
+        <span class="mono live">Estate live · South Sikkim</span>
+        <span class="mono">27°14′N · 88°25′E</span>
+      </div>
+      <div class="group">
+        <span class="mono">№ 04 — The Wooden Caddy</span>
+        <span class="mono">SKU · TEMI-PREMIUM-TEA-WOODEN-200G-NAT</span>
+      </div>
+    </div>
+
+    <div class="hero-stage">
+      <div class="hero-title">
+        <div class="eyebrow">Premium Organic Orthodox Black</div>
+        <h1>
+          <span class="l">The Taste of</span>
+          <span class="l">a <em>Distant</em></span>
+          <span class="l"><span class="accent">Saga.</span></span>
+        </h1>
+      </div>
+
+      <div class="product-stage" id="stage">
+        <!-- steam wisps -->
+        <svg class="steam" viewBox="0 0 160 280" aria-hidden="true">
+          <path d="M40 270 C 30 230, 60 200, 50 160 C 40 120, 70 90, 60 50 C 55 30, 70 15, 60 0"/>
+          <path d="M80 270 C 70 230, 100 200, 90 160 C 80 120, 110 90, 100 50 C 95 30, 110 15, 100 0"/>
+          <path d="M120 270 C 110 230, 140 200, 130 160 C 120 120, 150 90, 140 50 C 135 30, 150 15, 140 0"/>
+        </svg>
+
+        <div class="caddy" id="caddy">
+          <img src="assets/temi-caddy-cutout.png" alt="Temi Tea Premium Wooden Caddy — pinewood box, 200 g organic orthodox black tea" id="caddyImg">
+          <div class="floor"></div>
+        </div>
+
+        <!-- hotspots (positioned in %) -->
+        <button class="hotspot" data-tip="t1" style="left:50%; top:24%;" aria-label="Govt. of Sikkim crest"></button>
+        <button class="hotspot" data-tip="t2" style="left:50%; top:67%;" aria-label="IMO Organic certification"></button>
+        <button class="hotspot" data-tip="t3" style="left:18%; top:38%;" aria-label="Himalayan pinewood"></button>
+        <button class="hotspot" data-tip="t4" style="left:84%; top:42%;" aria-label="Net weight"></button>
+
+        <div class="tooltip" id="t1" style="left:50%; top:24%;">
+          <div class="k">Crest</div>
+          <div class="v"><em>Govt. of Sikkim</em><br>Est. 1969</div>
+          <div class="sub">State enterprise · Namgyal era</div>
+        </div>
+        <div class="tooltip" id="t2" style="left:50%; top:67%;">
+          <div class="k">Certification</div>
+          <div class="v"><em>IMO Switzerland</em><br>Organic, since 2008</div>
+          <div class="sub">Audited annually · Bangalore unit</div>
+        </div>
+        <div class="tooltip" id="t3" style="left:18%; top:38%;">
+          <div class="k">Material</div>
+          <div class="v"><em>Himalayan pine</em><br>Natural finish</div>
+          <div class="sub">Hand-joined · Sikkim sourced</div>
+        </div>
+        <div class="tooltip" id="t4" style="left:84%; top:42%;">
+          <div class="k">Net Weight</div>
+          <div class="v">200 g<br><em>Whole leaf, orthodox</em></div>
+          <div class="sub">≈ 80–100 cups</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-foot">
+      <div class="tele">
+        <div class="cell">
+          <div class="k">Estate Founded</div>
+          <div class="v">1969</div>
+        </div>
+        <div class="cell">
+          <div class="k">Elevation</div>
+          <div class="v">1,200–2,100 <small>m</small></div>
+        </div>
+        <div class="cell">
+          <div class="k">Estate Area</div>
+          <div class="v">440 <small>acres</small></div>
+        </div>
+      </div>
+
+      <div class="cta-row">
+        <a class="btn-primary" href="#cta">Order the Caddy <span class="arr"></span></a>
+        <a class="btn-ghost" href="#tasting">Tasting notes</a>
+      </div>
+
+      <div class="tele right-tele">
+        <div class="cell">
+          <div class="k">Price</div>
+          <div class="v">₹1,421 <small>INR</small></div>
+        </div>
+        <div class="cell">
+          <div class="k">Delivery</div>
+          <div class="v"><em>2–3 weeks</em></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MARQUEE ============ -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Organic Orthodox Black</span><span>Govt. of Sikkim · Est. 1969</span><span>The only tea estate in Sikkim</span><span>Pinewood Caddy · 200g</span><span>IMO Switzerland · Organic since 2008</span><span>Tea Board of India · Quality Award '94 &amp; '95</span>
+    <span>Organic Orthodox Black</span><span>Govt. of Sikkim · Est. 1969</span><span>The only tea estate in Sikkim</span><span>Pinewood Caddy · 200g</span><span>IMO Switzerland · Organic since 2008</span><span>Tea Board of India · Quality Award '94 &amp; '95</span>
+  </div>
+</div>
+
+<!-- ============ ORIGIN ============ -->
+<section id="origin" class="origin">
+  <div class="wrap">
+    <div class="head">
+      <div class="eyebrow">I · The Origin</div>
+      <h2>A garden that grew from a <em>king's quiet dream,</em><br>between two snowfields and a slow river.</h2>
+    </div>
+
+    <div class="origin-grid">
+      <div class="copy">
+        <p>In <span class="accent">1969,</span> on the gentle slopes that fall from the Tendong hill range, a 440-acre stretch of forest was cleared and planted with tea. The vision came from <span class="accent">Palden Thondup Namgyal,</span> the last <em>Chogyal</em> of Sikkim — partly as a working industry for his hill people, partly as a means of resettling Tibetan refugees who had arrived in the years after 1959.</p>
+
+        <p>The garden was called <em>Temi.</em> Half a century later, it remains the only tea estate in the state of Sikkim — a single, contiguous garden run by the Government of Sikkim, certified fully organic by Switzerland's <em>Institute of Marketecology</em> in 2008.</p>
+
+        <p>The leaf is grown the slow way. Orthodox processing — careful plucking, wilting, rolling, oxidation and drying — on loamy, gently-sloping soil at the foot of the Eastern Himalaya. Around 100 tonnes of finished tea leaves this hillside each year; about three-quarters of it goes to the Kolkata auction.</p>
+
+        <div class="sign">
+          <span class="squiggle">~ Temi, South Sikkim · PIN 731 134</span>
+          <span class="who">Estate notes</span>
+        </div>
+      </div>
+
+      <div class="facts">
+        <div class="grid">
+          <div class="cell">
+            <div class="k">Founded</div>
+            <div class="v">1969</div>
+            <div class="note">Commissioned by the Government of Sikkim.</div>
+          </div>
+          <div class="cell">
+            <div class="k">Estate</div>
+            <div class="v">440<small>acres</small></div>
+            <div class="note">A single, contiguous garden — Sikkim's only one.</div>
+          </div>
+          <div class="cell">
+            <div class="k">Elevation</div>
+            <div class="v">1.2–2.1<small>km</small></div>
+            <div class="note">Estate spans 1,200–2,100 m on the slopes of Tendong hill.</div>
+          </div>
+          <div class="cell">
+            <div class="k">Organic since</div>
+            <div class="v">2008</div>
+            <div class="note">Audited annually to IMO (Switzerland) standards.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="map-strip" aria-hidden="true">
+      <div class="pin">
+        <div class="ring"></div>
+        <div class="dot"></div>
+        <div class="lbl">Temi Garden</div>
+      </div>
+      <div class="coords">27°14′12″N · 88°25′20″E<br>South Sikkim, India</div>
+      <div class="alt">Tendong hill range<br>Eastern Himalaya</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TASTING ============ -->
+<section id="tasting" class="tasting">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <div class="mono" style="color:var(--moss);">II · The Cup</div>
+        <h2 style="margin-top:14px;">Bold but unhurried.<br>A long, <em>honey-bright</em> finish.</h2>
+      </div>
+      <p>Trace the cup with your tongue and you'll find four moving parts. Hover any of them to read what we tasted on the bench.</p>
+    </div>
+
+    <div class="tasting-grid">
+      <div class="wheel-wrap" id="wheelWrap">
+        <svg class="wheel" viewBox="-260 -260 520 520" id="wheel">
+          <!-- Generated by JS for cleaner geometry -->
+        </svg>
+        <div class="wheel-center">
+          <div class="word" id="wheelWord">Honeyed</div>
+          <div class="sub" id="wheelSub">Hover any slice</div>
+        </div>
+      </div>
+
+      <div class="tasting-notes" id="notes">
+        <div class="item" data-id="aroma">
+          <div class="n">I.</div>
+          <div>
+            <div class="lbl"><em>Aroma</em> — delicate, floral</div>
+            <div class="desc">A soft floral lift, the kind sources describe again and again — cool mountain air, a hint of mountain flowers, nothing assertive. The leaf is grown in mist; the cup remembers it.</div>
+          </div>
+        </div>
+        <div class="item" data-id="body">
+          <div class="n">II.</div>
+          <div>
+            <div class="lbl"><em>Body</em> — light, smooth</div>
+            <div class="desc">Orthodox black, but light on the tongue rather than heavy. Round and unhurried; the official estate note simply calls it &ldquo;a premium grade tea, light in color with a delicate flavor and aroma.&rdquo;</div>
+          </div>
+        </div>
+        <div class="item" data-id="finish">
+          <div class="n">III.</div>
+          <div>
+            <div class="lbl"><em>Finish</em> — lingering, lightly sweet</div>
+            <div class="desc">A clean, faintly muscatel sweetness that settles slowly — the muscatel comparison that tea drinkers reach for when placing Sikkim somewhere near, but distinct from, Darjeeling.</div>
+          </div>
+        </div>
+        <div class="item" data-id="liquor">
+          <div class="n">IV.</div>
+          <div>
+            <div class="lbl"><em>Liquor</em> — light golden amber</div>
+            <div class="desc">Brews to a bright, translucent liquor — closer to gold than to mahogany. The first flush in particular is described as <em>light, golden yellow</em> with a delicate flavour.</div>
+          </div>
+        </div>
+
+        <div class="brew-bar">
+          <div class="lbls"><span>Pale gold</span><span>Golden amber</span><span>Deep amber</span><span>Mahogany</span></div>
+          <div class="bar"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CADDY DETAIL ============ -->
+<section id="caddy" class="caddy">
+  <div class="wrap">
+    <div class="caddy-grid">
+      <div class="img-card">
+        <img src="assets/temi-caddy-cutout.png" alt="The Temi premium wooden caddy">
+        <div class="stamp">est.<br>1969</div>
+      </div>
+      <div>
+        <div class="mono" style="color:var(--moss);">III · The Object</div>
+        <h2 style="margin-top:14px;">A pinewood box,<br>built like a small <em>heirloom.</em></h2>
+        <p class="desc">A natural-finish wooden caddy carrying the estate's premium black: 200 grams of organic orthodox black tea, sealed under the crest of the Government of Sikkim and the IMO organic mark. Made by, and only available from, Temi Tea Estate.</p>
+
+        <div class="specs">
+          <div class="spec"><span class="k">Material</span><span class="v">Wooden caddy, natural</span></div>
+          <div class="spec"><span class="k">Net weight</span><span class="v">200 g (0.2 kg)</span></div>
+          <div class="spec"><span class="k">Tea type</span><span class="v">Organic Orthodox Black</span></div>
+          <div class="spec"><span class="k">Source</span><span class="v">Temi Garden, Sikkim</span></div>
+          <div class="spec"><span class="k">Vendor</span><span class="v">Temi Tea Estate</span></div>
+          <div class="spec"><span class="k">SKU</span><span class="v" style="font-size:13px;">TEMI-PREMIUM-TEA-WOODEN-200G-NAT</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RITUAL / TIMER ============ -->
+<section id="ritual" class="ritual">
+  <div class="wrap">
+    <div class="ritual-head">
+      <div>
+        <div class="eyebrow">IV · The Ritual</div>
+        <h2>Four small steps,<br>one <em>slow</em> cup.</h2>
+      </div>
+      <p>A simple, general guide for brewing an orthodox black tea. The estate doesn't dictate temperatures, but these are the proportions tea drinkers usually reach for. Pick a step to start the timer.</p>
+    </div>
+
+    <div class="timer">
+      <div class="steps" id="steps">
+        <div class="step active" data-sec="60" data-word="Warm">
+          <div class="n">I.</div>
+          <div class="ttl">Warm the pot<span class="d">Rinse with boiling water · settle the porcelain</span></div>
+          <div class="dur">01:00</div>
+        </div>
+        <div class="step" data-sec="30" data-word="Measure">
+          <div class="n">II.</div>
+          <div class="ttl">Measure the leaf<span class="d">One heaped teaspoon · 200 ml of water</span></div>
+          <div class="dur">00:30</div>
+        </div>
+        <div class="step" data-sec="240" data-word="Steep">
+          <div class="n">III.</div>
+          <div class="ttl">Steep at 95°C<span class="d">Just off the boil · four minutes, undisturbed</span></div>
+          <div class="dur">04:00</div>
+        </div>
+        <div class="step" data-sec="60" data-word="Rest">
+          <div class="n">IV.</div>
+          <div class="ttl">Pour &amp; rest<span class="d">Strain into a warmed cup · wait once more</span></div>
+          <div class="dur">01:00</div>
+        </div>
+      </div>
+
+      <div class="timer-card">
+        <svg class="arc-bg" viewBox="0 0 200 200">
+          <circle cx="100" cy="100" r="92" fill="none" stroke="rgba(245,239,228,0.12)" stroke-width="2"/>
+        </svg>
+        <svg class="arc-fg" viewBox="0 0 200 200">
+          <circle id="ring" cx="100" cy="100" r="92" fill="none" stroke="oklch(0.86 0.025 75)" stroke-width="2" stroke-dasharray="578" stroke-dashoffset="0" stroke-linecap="round"/>
+        </svg>
+        <div class="center">
+          <div class="t" id="tmr">01:00</div>
+          <div class="label" id="lbl">Warm the pot</div>
+          <div class="ctrl">
+            <button id="play" class="primary">Start</button>
+            <button id="reset">Reset</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HERITAGE ============ -->
+<section id="heritage" class="heritage">
+  <div class="wrap">
+    <div class="mono" style="color:var(--moss);">V · Recognition</div>
+    <h2 style="margin-top:14px;">A small estate with a <em>long</em> memory.<br>The recognitions, the certifications, the singularity.</h2>
+
+    <div class="timeline">
+      <div class="step">
+        <div class="yr">1969</div>
+        <div class="ttl">A garden begins</div>
+        <div class="desc">Established by <em>Palden Thondup Namgyal,</em> the last Chogyal of Sikkim. The 440-acre garden is planted on the slopes of the Tendong hill range — a working industry, and a way to resettle Tibetan refugees in the region.</div>
+      </div>
+      <div class="step">
+        <div class="yr">1994 · 95</div>
+        <div class="ttl">All India Quality Award</div>
+        <div class="desc">The <em>Tea Board of India</em> presents Temi with its All India Quality Award for two consecutive years — 1994 and 1995 — recognising the cup quality of an estate then barely twenty-five years old.</div>
+      </div>
+      <div class="step">
+        <div class="yr">2008</div>
+        <div class="ttl">Certified organic</div>
+        <div class="desc">After conversion under the guidelines of <em>Switzerland's Institute of Marketecology (IMO),</em> the whole estate is certified 100% organic. Inspected annually by IMO's Bangalore unit.</div>
+      </div>
+      <div class="step">
+        <div class="yr">2019</div>
+        <div class="ttl">Land to the workers</div>
+        <div class="desc">Landholding rights for the homesteads of <em>192 worker families</em> are distributed by the Government of Sikkim — a continuation of the estate's founding idea: an industry that belongs to the people who tend it.</div>
+      </div>
+    </div>
+
+    <div class="quotes">
+      <article class="award">
+        <div class="badge-wrap">
+          <svg class="badge-mark" viewBox="0 0 80 80" aria-hidden="true">
+            <circle cx="40" cy="40" r="36" fill="none" stroke="currentColor" stroke-width="1"/>
+            <circle cx="40" cy="40" r="28" fill="none" stroke="currentColor" stroke-width="0.6"/>
+            <text x="40" y="35" text-anchor="middle" font-family="JetBrains Mono" font-size="6" letter-spacing="1" fill="currentColor">QUALITY</text>
+            <text x="40" y="50" text-anchor="middle" font-family="Cormorant Garamond" font-style="italic" font-size="18" fill="currentColor">'94/'95</text>
+          </svg>
+        </div>
+        <div class="award-meta">All India Quality Award</div>
+        <h3>Awarded to Temi by the <em>Tea Board of India</em> for two consecutive years — 1994 and 1995.</h3>
+        <div class="award-body">Government of India recognition. The honour, given on cup quality, came when the estate was barely a quarter-century old.</div>
+        <div class="award-src">Source · Tea Board of India</div>
+      </article>
+
+      <article class="award">
+        <div class="badge-wrap">
+          <svg class="badge-mark" viewBox="0 0 80 80" aria-hidden="true">
+            <circle cx="40" cy="40" r="36" fill="none" stroke="currentColor" stroke-width="1"/>
+            <circle cx="40" cy="40" r="28" fill="none" stroke="currentColor" stroke-width="0.6"/>
+            <text x="40" y="35" text-anchor="middle" font-family="JetBrains Mono" font-size="6" letter-spacing="1" fill="currentColor">ORGANIC</text>
+            <text x="40" y="50" text-anchor="middle" font-family="Cormorant Garamond" font-style="italic" font-size="18" fill="currentColor">2008</text>
+          </svg>
+        </div>
+        <div class="award-meta">IMO Switzerland · 100% Organic</div>
+        <h3>Conversion completed under <em>Institute of Marketecology</em> guidelines; certified in 2008.</h3>
+        <div class="award-body">No chemical inputs anywhere on the 440-acre slope. Inspected each year by IMO's Bangalore unit; in continuous certification ever since.</div>
+        <div class="award-src">Source · IMO (Switzerland)</div>
+      </article>
+
+      <article class="award">
+        <div class="badge-wrap">
+          <svg class="badge-mark" viewBox="0 0 80 80" aria-hidden="true">
+            <circle cx="40" cy="40" r="36" fill="none" stroke="currentColor" stroke-width="1"/>
+            <circle cx="40" cy="40" r="28" fill="none" stroke="currentColor" stroke-width="0.6"/>
+            <text x="40" y="35" text-anchor="middle" font-family="JetBrains Mono" font-size="6" letter-spacing="1" fill="currentColor">ESTATE</text>
+            <text x="40" y="50" text-anchor="middle" font-family="Cormorant Garamond" font-style="italic" font-size="18" fill="currentColor">ONE</text>
+          </svg>
+        </div>
+        <div class="award-meta">Govt. of Sikkim · State-run estate</div>
+        <h3>Temi is the <em>only tea garden</em> in the state of Sikkim — and at this scale, considered one of the best in India.</h3>
+        <div class="award-body">A single 440-acre garden, run by the Government of Sikkim under its own Tea Board. About three-quarters of annual production is auctioned in Kolkata.</div>
+        <div class="award-src">Source · Govt. of Sikkim · Wikipedia</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section id="cta" class="cta">
+  <!-- subtle topographic backdrop, echoes the hero -->
+  <div class="topo" aria-hidden="true">
+    <svg viewBox="0 0 1400 700" preserveAspectRatio="xMidYMid slice">
+      <g fill="none" stroke="oklch(0.78 0.018 70)" stroke-width="0.7">
+        <path d="M-50 360 C 200 280, 400 420, 620 340 S 980 220, 1200 310 S 1500 260, 1500 260"/>
+        <path d="M-50 420 C 220 360, 420 480, 640 410 S 1000 300, 1200 380 S 1500 330, 1500 330"/>
+        <path d="M-50 480 C 240 440, 440 540, 660 480 S 1020 380, 1220 450 S 1500 390, 1500 390"/>
+        <path d="M-50 540 C 260 520, 460 600, 680 540 S 1040 460, 1240 520 S 1500 460, 1500 460"/>
+      </g>
+    </svg>
+  </div>
+
+  <div class="wrap inner">
+    <div class="eyebrow">VI · Place Your Order</div>
+    <h2>Bring the <em>distant saga</em><br>home in a wooden box.</h2>
+    <p class="sub">Whole-leaf organic black, sealed under the crest of the Government of Sikkim. Shipped estate-direct from Temi in roughly two to three weeks.</p>
+
+    <article class="ticket">
+      <!-- LEFT: product stub -->
+      <div class="product">
+        <div class="stub-head">
+          <div class="lot">Item
+            <strong>Premium Tea Wooden Caddy</strong>
+          </div>
+          <div class="stamp">Estate<br><em>since</em><br>1969</div>
+        </div>
+        <div class="product-img">
+          <img src="assets/temi-caddy-cutout.png" alt="Temi Premium Tea Wooden Caddy">
+          <div class="floor"></div>
+        </div>
+        <div class="product-foot">
+          <div class="cell">
+            <div class="k">Net weight</div>
+            <div class="v">200 g <em>· 0.2 kg</em></div>
+          </div>
+          <div class="cell">
+            <div class="k">Type</div>
+            <div class="v"><em>Organic Orthodox Black</em></div>
+          </div>
+          <div class="cell">
+            <div class="k">Origin</div>
+            <div class="v">Temi Garden, Sikkim</div>
+          </div>
+          <div class="cell">
+            <div class="k">Vendor</div>
+            <div class="v">Temi Tea Estate</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: order panel -->
+      <div class="order">
+        <div class="o-head">
+          <span class="label">Order details</span>
+          <span class="num">Form · 06 / 2026</span>
+        </div>
+        <h3>The <em>final pour.</em></h3>
+
+        <div class="ord-grid">
+          <div class="cell">
+            <div class="k">SKU</div>
+            <div class="v" style="font-family:var(--mono); font-size:11px; letter-spacing:0.06em;">TEMI-PREMIUM-TEA-<br>WOODEN-200G-NAT</div>
+          </div>
+          <div class="cell">
+            <div class="k">Unit price</div>
+            <div class="v">₹1,421 <em style="font-size:14px;">INR</em></div>
+          </div>
+          <div class="cell">
+            <div class="k">Ships from</div>
+            <div class="v"><em>P.O. Temi</em><br>South Sikkim</div>
+          </div>
+          <div class="cell">
+            <div class="k">Delivery</div>
+            <div class="v"><em>≈ 2–3 weeks</em></div>
+          </div>
+        </div>
+
+        <div class="qty-row">
+          <span class="qk">Quantity</span>
+          <div class="qty" id="qty">
+            <button data-d="-1" aria-label="Decrease">−</button>
+            <span class="n" id="qtyN">1</span>
+            <button data-d="1" aria-label="Increase">+</button>
+          </div>
+        </div>
+
+        <div class="total">
+          <span class="tk">Total</span>
+          <span class="tv" id="price">₹1,421 <small>INR</small></span>
+        </div>
+
+        <button class="add" id="addBtn">
+          <span>Add to Cart</span>
+          <span class="arr"></span>
+        </button>
+      </div>
+    </article>
+
+    <div class="band">
+      <div class="group">
+        <div class="item">
+          <div class="k">Estate</div>
+          <div class="v"><em>Temi Tea Estate</em> · Govt. of Sikkim</div>
+        </div>
+        <div class="item">
+          <div class="k">Address</div>
+          <div class="v">P.O. Temi, South Sikkim · PIN 731 134</div>
+        </div>
+        <div class="item">
+          <div class="k">Queries</div>
+          <div class="v"><a href="tel:+919735876022" style="color:inherit;">+91 97358 76022</a></div>
+        </div>
+      </div>
+      <div class="group" style="flex-direction:column; gap:8px;">
+        <span class="pill">IMO Switzerland · Organic</span>
+        <span class="pill">Tea Board of India · Quality '94/'95</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <h3>Temi <em>Tea</em></h3>
+        <p style="margin-top:16px; max-width:340px; line-height:1.6; font-size:16px;">Established 1969 by the Government of Sikkim. The only tea estate in the state — one garden, one leaf, one slow tradition.</p>
+        <p class="mono" style="margin-top:24px; color:color-mix(in oklab, var(--paper) 50%, transparent);">Temi Tea Estate, P.O. Temi<br>South Sikkim · PIN 731 134</p>
+      </div>
+      <div class="col">
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="#">Wooden Caddy</a></li>
+          <li><a href="#">Black Tea</a></li>
+          <li><a href="#">Green Tea</a></li>
+          <li><a href="#">Gift Boxes</a></li>
+        </ul>
+      </div>
+      <div class="col">
+        <h4>Estate</h4>
+        <ul>
+          <li><a href="#">History</a></li>
+          <li><a href="#">Awards</a></li>
+          <li><a href="#">Gallery</a></li>
+          <li><a href="#">Our Team</a></li>
+        </ul>
+      </div>
+      <div class="col">
+        <h4>Visit</h4>
+        <ul>
+          <li><a href="#">The Garden</a></li>
+          <li><a href="#">Bungalow Stays</a></li>
+          <li><a href="#">Tasting Room</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copy">
+      <span>© 2026 Temi Tea Estate · Govt. of Sikkim</span>
+      <span>P.O. Temi · South Sikkim · PIN 731 134</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ============ HERO: parallax tilt + hotspot tooltips ============
+  (function(){
+    const stage = document.getElementById('stage');
+    const caddy = document.getElementById('caddy');
+    if(!stage || !caddy) return;
+
+    let rect = stage.getBoundingClientRect();
+    const updateRect = () => rect = stage.getBoundingClientRect();
+    window.addEventListener('resize', updateRect);
+    window.addEventListener('scroll', updateRect, { passive: true });
+
+    function onMove(e){
+      const x = (e.clientX - rect.left) / rect.width;
+      const y = (e.clientY - rect.top) / rect.height;
+      const rx = (0.5 - y) * 10;   // tilt up/down
+      const ry = (x - 0.5) * 14;   // tilt left/right
+      const tx = (x - 0.5) * 12;
+      const ty = (y - 0.5) * 10;
+      caddy.style.transform = `translate3d(${tx}px, ${ty}px, 0) rotateX(${rx}deg) rotateY(${ry}deg)`;
+    }
+    function onLeave(){
+      caddy.style.transform = 'translate3d(0,0,0) rotateX(0deg) rotateY(0deg)';
+    }
+    stage.addEventListener('mousemove', onMove);
+    stage.addEventListener('mouseleave', onLeave);
+
+    // hotspot tooltips
+    const hotspots = stage.querySelectorAll('.hotspot');
+    const tooltips = stage.querySelectorAll('.tooltip');
+    function closeAll(){
+      hotspots.forEach(h => h.classList.remove('open'));
+      tooltips.forEach(t => t.classList.remove('show'));
+    }
+    hotspots.forEach(h => {
+      const tip = document.getElementById(h.dataset.tip);
+      h.addEventListener('mouseenter', () => { closeAll(); h.classList.add('open'); tip && tip.classList.add('show'); });
+      h.addEventListener('focus',     () => { closeAll(); h.classList.add('open'); tip && tip.classList.add('show'); });
+      h.addEventListener('click', (e) => { e.stopPropagation(); h.classList.toggle('open'); tip && tip.classList.toggle('show'); });
+    });
+    stage.addEventListener('mouseleave', closeAll);
+    document.addEventListener('click', (e) => { if(!e.target.closest('.hotspot') && !e.target.closest('.tooltip')) closeAll(); });
+
+    // initial: briefly highlight first hotspot to teach the affordance
+    setTimeout(() => {
+      const first = hotspots[0];
+      if(first){ first.classList.add('open'); const tip = document.getElementById(first.dataset.tip); tip && tip.classList.add('show'); }
+      setTimeout(closeAll, 2400);
+    }, 900);
+  })();
+
+  // ============ TASTING WHEEL ============
+  (function(){
+    const slices = [
+      { id:'aroma',  word:'Floral',   sub:'Delicate, mountain air' },
+      { id:'body',   word:'Light',    sub:'Smooth, orthodox black' },
+      { id:'finish', word:'Muscatel', sub:'Lingering, lightly sweet' },
+      { id:'liquor', word:'Golden',   sub:'Light amber, translucent' },
+    ];
+    const svg = document.getElementById('wheel');
+    const word = document.getElementById('wheelWord');
+    const sub = document.getElementById('wheelSub');
+    const notes = document.getElementById('notes');
+
+    const cx=0, cy=0, rOuter=240, rInner=140;
+    const step = (Math.PI*2)/slices.length;
+    const arcPath = (i) => {
+      const a0 = -Math.PI/2 + i*step;
+      const a1 = a0 + step;
+      const x0 = cx + rOuter*Math.cos(a0), y0 = cy + rOuter*Math.sin(a0);
+      const x1 = cx + rOuter*Math.cos(a1), y1 = cy + rOuter*Math.sin(a1);
+      const x2 = cx + rInner*Math.cos(a1), y2 = cy + rInner*Math.sin(a1);
+      const x3 = cx + rInner*Math.cos(a0), y3 = cy + rInner*Math.sin(a0);
+      return `M ${x0} ${y0} A ${rOuter} ${rOuter} 0 0 1 ${x1} ${y1} L ${x2} ${y2} A ${rInner} ${rInner} 0 0 0 ${x3} ${y3} Z`;
+    };
+
+    slices.forEach((s,i)=>{
+      const p = document.createElementNS('http://www.w3.org/2000/svg','path');
+      p.setAttribute('class','arc');
+      p.setAttribute('d', arcPath(i));
+      p.setAttribute('data-id', s.id);
+      svg.appendChild(p);
+      // label
+      const mid = -Math.PI/2 + i*step + step/2;
+      const lr = (rOuter+rInner)/2;
+      const lx = cx + lr*Math.cos(mid), ly = cy + lr*Math.sin(mid);
+      const t = document.createElementNS('http://www.w3.org/2000/svg','text');
+      t.setAttribute('class','wheel-label');
+      t.setAttribute('x', lx); t.setAttribute('y', ly);
+      t.setAttribute('text-anchor','middle');
+      t.setAttribute('dominant-baseline','middle');
+      t.textContent = s.word;
+      svg.appendChild(t);
+    });
+    const ringO = document.createElementNS('http://www.w3.org/2000/svg','circle');
+    ringO.setAttribute('class','ring'); ringO.setAttribute('cx',0); ringO.setAttribute('cy',0); ringO.setAttribute('r',rOuter);
+    svg.appendChild(ringO);
+    const ringI = document.createElementNS('http://www.w3.org/2000/svg','circle');
+    ringI.setAttribute('class','ring'); ringI.setAttribute('cx',0); ringI.setAttribute('cy',0); ringI.setAttribute('r',rInner);
+    svg.appendChild(ringI);
+
+    function activate(id){
+      svg.querySelectorAll('.arc').forEach(a => a.classList.toggle('active', a.dataset.id===id));
+      notes.querySelectorAll('.item').forEach(it => it.classList.toggle('active', it.dataset.id===id));
+      const s = slices.find(x=>x.id===id);
+      if(s){ word.textContent = s.word; sub.textContent = s.sub; }
+    }
+    svg.addEventListener('mouseover', e => {
+      const a = e.target.closest('.arc'); if(a) activate(a.dataset.id);
+    });
+    notes.addEventListener('mouseover', e => {
+      const it = e.target.closest('.item'); if(it) activate(it.dataset.id);
+    });
+    activate('aroma'); // default
+  })();
+
+  // ============ BREW TIMER ============
+  (function(){
+    const steps = [...document.querySelectorAll('#steps .step')];
+    const tmr = document.getElementById('tmr');
+    const lbl = document.getElementById('lbl');
+    const ring = document.getElementById('ring');
+    const play = document.getElementById('play');
+    const reset = document.getElementById('reset');
+    const circ = 578; // 2*pi*92 ≈ 578
+
+    let idx = 0, total = 60, remain = 60, running = false, iv = null;
+
+    function setStep(i){
+      idx = i;
+      steps.forEach((s,j)=> s.classList.toggle('active', j===i));
+      total = parseInt(steps[i].dataset.sec,10);
+      remain = total;
+      lbl.textContent = steps[i].dataset.word + ' the pot'.replace('the pot',
+        i===0 ? 'the pot' : (i===1 ? 'the leaf' : (i===2 ? 'at 95°C' : '& rest')));
+      // simpler labels
+      const labels = ['Warm the pot','Measure the leaf','Steep at 95°C','Pour & rest'];
+      lbl.textContent = labels[i];
+      render();
+    }
+    function render(){
+      const m = Math.floor(remain/60), s = remain%60;
+      tmr.textContent = String(m).padStart(2,'0')+':'+String(s).padStart(2,'0');
+      const off = circ * (1 - remain/total);
+      ring.setAttribute('stroke-dashoffset', off);
+    }
+    function tick(){
+      if(remain>0){ remain--; render(); }
+      else {
+        clearInterval(iv); running=false; play.textContent='Start';
+        if(idx < steps.length-1){ setStep(idx+1); }
+      }
+    }
+    play.addEventListener('click', ()=>{
+      if(running){ clearInterval(iv); running=false; play.textContent='Resume'; }
+      else { running=true; play.textContent='Pause'; iv=setInterval(tick,1000); }
+    });
+    reset.addEventListener('click', ()=>{
+      clearInterval(iv); running=false; play.textContent='Start'; remain=total; render();
+    });
+    steps.forEach((s,i)=> s.addEventListener('click', ()=>{ clearInterval(iv); running=false; play.textContent='Start'; setStep(i); }));
+    setStep(0);
+  })();
+
+  // ============ QTY + PRICE ============
+  (function(){
+    const qty = document.getElementById('qty');
+    const n = document.getElementById('qtyN');
+    const price = document.getElementById('price');
+    const base = 1421;
+    let q = 1;
+    qty.addEventListener('click', e=>{
+      const b = e.target.closest('button'); if(!b) return;
+      q = Math.max(1, Math.min(9, q + parseInt(b.dataset.d,10)));
+      n.textContent = q;
+      const t = (base*q).toLocaleString('en-IN');
+      price.innerHTML = `₹${t} <small>INR</small>`;
+    });
+    document.getElementById('addBtn').addEventListener('click', e=>{
+      const btn = e.currentTarget;
+      const spans = btn.querySelectorAll('span');
+      if(spans[0]) spans[0].textContent = '✓ Added to cart';
+      setTimeout(()=>{ if(spans[0]) spans[0].textContent = 'Add to Cart'; }, 1600);
+    });
+  })();
+</script>
+
+</body>
+</html>

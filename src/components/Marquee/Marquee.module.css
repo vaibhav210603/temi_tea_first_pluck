@@ -1,0 +1,33 @@
+.marquee {
+  border-block: 1px solid var(--rule);
+  padding: 18px 0;
+  overflow: hidden;
+  background: color-mix(in oklab, var(--paper) 70%, var(--pine) 30%);
+}
+
+.marqueeTrack {
+  display: flex;
+  gap: 64px;
+  white-space: nowrap;
+  animation: scroll 60s linear infinite;
+}
+
+.marqueeTrack span {
+  font-family: var(--serif);
+  font-size: 22px;
+  color: var(--ink);
+  display: inline-flex;
+  align-items: center;
+  gap: 64px;
+}
+
+.marqueeTrack span::after {
+  content: "✦";
+  color: var(--moss);
+  font-size: 14px;
+}
+
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
