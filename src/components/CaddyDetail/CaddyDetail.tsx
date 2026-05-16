@@ -17,10 +17,11 @@ export default function CaddyDetail() {
         <div className={styles.caddyGrid}>
           <div className={styles.imgCard}>
             <Image
-              src="/images/temi-caddy-cutout.png"
+              src="/images/chai.png"
               alt="The Temi premium wooden caddy"
-              width={500}
-              height={400}
+              fill
+              quality={85}
+              className={styles.caddyImg}
             />
             <div className={styles.stamp}>est.<br />1969</div>
           </div>

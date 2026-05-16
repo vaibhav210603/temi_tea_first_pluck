@@ -28,6 +28,24 @@
   max-width: 320px;
 }
 
+.heroImageWrap {
+  position: relative;
+  width: 100%;
+  height: 480px;
+  margin-bottom: 80px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.heroImage {
+  object-fit: cover;
+  transition: transform 1.5s ease;
+}
+
+.heroImageWrap:hover .heroImage {
+  transform: scale(1.05);
+}
+
 .tastingGrid {
   display: grid;
   grid-template-columns: 1.1fr 1fr;
@@ -120,15 +138,50 @@
   margin-top: 48px;
 }
 
-.brewLabels {
+.brewSteps {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.brewStep {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  width: 80px;
+  text-align: center;
+}
+
+.brewStep:first-child {
+  align-items: flex-start;
+  text-align: left;
+}
+
+.brewStep:last-child {
+  align-items: flex-end;
+  text-align: right;
+}
+
+.brewStep span {
   font-family: var(--mono);
   font-size: 10px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--ink-faint);
-  margin-bottom: 12px;
+}
+
+.brewImageWrap {
+  position: relative;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 4px 12px color-mix(in oklab, var(--ink) 12%, transparent);
+}
+
+.brewImage {
+  object-fit: cover;
 }
 
 .bar {

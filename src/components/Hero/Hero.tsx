@@ -177,11 +177,11 @@ export default function Hero() {
 
         <div className={styles.heroStage}>
           <div className={styles.heroTitle}>
-            <div className={styles.eyebrow}>Premium Organic Orthodox Black</div>
+            <div className={styles.eyebrow}>The taste of a distant saga.</div>
             <h1 className={styles.h1}>
-              <span className={styles.l}>The Taste of</span>
-              <span className={styles.l}>a <em>Distant</em></span>
-              <span className={styles.l}><span className={styles.accent}>Saga.</span></span>
+              <span className={styles.l}>Black Tea</span>
+              <span className={styles.l}><span className={styles.accent}>Wooden</span></span>
+              <span className={styles.l}><span className={styles.accent}>Caddy.</span></span>
             </h1>
           </div>
 
@@ -199,6 +199,8 @@ export default function Hero() {
                 alt="Temi Tea Premium Wooden Caddy — pinewood box, 200 g organic orthodox black tea"
                 width={620}
                 height={565}
+                quality={85}
+                priority
               />
               <div className={styles.floor}></div>
             </div>

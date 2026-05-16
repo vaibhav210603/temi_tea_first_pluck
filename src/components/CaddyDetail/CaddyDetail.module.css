@@ -13,25 +13,12 @@
   position: relative;
   aspect-ratio: 5 / 4;
   background: var(--paper-2);
-  display: grid;
-  place-items: center;
   border-radius: 2px;
   overflow: hidden;
 }
 
-.imgCard::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(80% 60% at 50% 90%, color-mix(in oklab, var(--ink) 16%, transparent), transparent 60%),
-    repeating-linear-gradient(0deg, transparent 0 30px, color-mix(in oklab, var(--ink) 4%, transparent) 30px 31px);
-}
-
-.imgCard img {
-  position: relative;
-  width: 78%;
-  filter: drop-shadow(0 22px 30px color-mix(in oklab, var(--ink) 18%, transparent));
+.caddyImg {
+  object-fit: cover;
 }
 
 .stamp {

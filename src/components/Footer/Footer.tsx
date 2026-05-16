@@ -1,50 +1,65 @@
+import Image from 'next/image'
 import styles from './Footer.module.css'
 
 export default function Footer() {
   return (
     <footer className={styles.footer}>
       <div className="wrap">
-        <div className={styles.footerGrid}>
-          <div>
-            <h3 className={styles.h3}>Temi <em>Tea</em></h3>
-            <p className={styles.about}>
-              Established 1969 by the Government of Sikkim. The only tea estate in the state — one garden, one leaf, one slow tradition.
-            </p>
+        <div className={styles.top}>
+          <div className={styles.brandCol}>
+            <div className={styles.temiRow}>
+              <div className={styles.temiLogoWrap}>
+                <Image
+                  src="/images/temitea.png"
+                  alt="Temi Tea"
+                  width={80}
+                  height={80}
+                  quality={90}
+                />
+              </div>
+              <span className={styles.temiName}>Temi Tea Estate</span>
+            </div>
+            <div className={styles.tagline}>THE TASTE OF A DISTANT SAGA</div>
             <p className={styles.address}>
-              Temi Tea Estate, P.O. Temi<br />South Sikkim · PIN 731 134
+              Temi Tea Estate · P.O. Temi, Namchi · South Sikkim ·<br />
+              India · 737126. The only tea estate of Sikkim.<br />
+              Government of Sikkim enterprise since 1969.
             </p>
-          </div>
-          <div>
-            <h4 className={styles.colH4}>Shop</h4>
-            <ul className={styles.colUl}>
-              <li><a href="#">Wooden Caddy</a></li>
-              <li><a href="#">Black Tea</a></li>
-              <li><a href="#">Green Tea</a></li>
-              <li><a href="#">Gift Boxes</a></li>
-            </ul>
-          </div>
-          <div>
-            <h4 className={styles.colH4}>Estate</h4>
-            <ul className={styles.colUl}>
-              <li><a href="#">History</a></li>
-              <li><a href="#">Awards</a></li>
-              <li><a href="#">Gallery</a></li>
-              <li><a href="#">Our Team</a></li>
-            </ul>
-          </div>
-          <div>
-            <h4 className={styles.colH4}>Visit</h4>
-            <ul className={styles.colUl}>
-              <li><a href="#">The Garden</a></li>
-              <li><a href="#">Bungalow Stays</a></li>
-              <li><a href="#">Tasting Room</a></li>
-              <li><a href="#">Contact</a></li>
-            </ul>
           </div>
         </div>
-        <div className={styles.copy}>
-          <span>© 2026 Temi Tea Estate · Govt. of Sikkim</span>
-          <span>P.O. Temi · South Sikkim · PIN 731 134</span>
+
+        <div className={styles.divider}></div>
+
+        <div className={styles.marketedBy}>
+          <div className={styles.marketedLabel}>MARKETED BY</div>
+          <div className={styles.mrcRow}>
+            <div className={styles.mrcLogoWrap}>
+              <Image
+                src="/images/MRC_LOGO.png"
+                alt="MRC Agrotech"
+                width={80}
+                height={80}
+                quality={90}
+              />
+            </div>
+            <span className={styles.mrcName}>MRC Agrotech Ltd.</span>
+          </div>
+          <div className={styles.mrcDetails}>
+            <div className={styles.scrip}>BSE SCRIP: 540809 · MRCAGRO</div>
+            <p className={styles.mrcAddress}>
+              Block No. 404, 4th Floor, Sagar Tech Plaza,<br />
+              Sakinaka, Andheri-Kurla Road, Andheri (E),<br />
+              Mumbai, Maharashtra – 400072
+            </p>
+            <a href="mailto:info@mrcagro.com" className={styles.email}>info@mrcagro.com</a>
+          </div>
+        </div>
+
+        <div className={styles.bottomBar}>
+          <div className={styles.copyright}>
+            © 2026 TEMI TEA ESTATE · GOVERNMENT OF SIKKIM · ALL RIGHTS RESERVED
+          </div>
+       
         </div>
       </div>
     </footer>

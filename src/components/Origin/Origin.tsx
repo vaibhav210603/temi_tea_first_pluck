@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import styles from './Origin.module.css'
 
 export default function Origin() {
@@ -56,6 +57,13 @@ export default function Origin() {
         </div>
 
         <div className={styles.mapStrip} aria-hidden="true">
+          <Image
+            src="/images/temi_garden_landscape.png"
+            alt="Temi Garden Landscape"
+            fill
+            quality={80}
+            style={{ objectFit: 'cover', opacity: 0.65 }}
+          />
           <div className={styles.pin}>
             <div className={styles.ring}></div>
             <div className={styles.dot}></div>

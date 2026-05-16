@@ -1,6 +1,7 @@
 'use client'
 
 import { useRef, useState, useEffect } from 'react'
+import Image from 'next/image'
 import styles from './Tasting.module.css'
 
 const slices = [
@@ -151,6 +152,10 @@ export default function Tasting() {
           </p>
         </div>
 
+        <div className={styles.heroImageWrap}>
+          <Image src="/images/tea_honey_finish.png" alt="Honey-bright finish tea" fill className={styles.heroImage} />
+        </div>
+
         <div className={styles.tastingGrid}>
           <div className={styles.wheelWrap}>
             <svg
@@ -182,11 +187,31 @@ export default function Tasting() {
             ))}
 
             <div className={styles.brewBar}>
-              <div className={styles.brewLabels}>
-                <span>Pale gold</span>
-                <span>Golden amber</span>
-                <span>Deep amber</span>
-                <span>Mahogany</span>
+              <div className={styles.brewSteps}>
+                <div className={styles.brewStep}>
+                  <div className={styles.brewImageWrap}>
+                    <Image src="/images/tea_pale_gold.png" alt="Pale gold" fill className={styles.brewImage} />
+                  </div>
+                  <span>Pale gold</span>
+                </div>
+                <div className={styles.brewStep}>
+                  <div className={styles.brewImageWrap}>
+                    <Image src="/images/tea_golden_amber.png" alt="Golden amber" fill className={styles.brewImage} />
+                  </div>
+                  <span>Golden amber</span>
+                </div>
+                <div className={styles.brewStep}>
+                  <div className={styles.brewImageWrap}>
+                    <Image src="/images/tea_deep_amber.png" alt="Deep amber" fill className={styles.brewImage} />
+                  </div>
+                  <span>Deep amber</span>
+                </div>
+                <div className={styles.brewStep}>
+                  <div className={styles.brewImageWrap}>
+                    <Image src="/images/tea_mahogany.png" alt="Mahogany" fill className={styles.brewImage} />
+                  </div>
+                  <span>Mahogany</span>
+                </div>
               </div>
               <div className={styles.bar}></div>
             </div>
